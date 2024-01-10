@@ -1,16 +1,16 @@
 import React from 'react';
 import {Route, BrowserRouter as Router, Routes, Link } from 'react-router-dom';
 
-import "./menu.css"
+
 
 function Menupfe() {
     return (
         <Router>
-            <nav className="navbar navbar-expand-lg navbar-light bg-primary">
+            <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container">
                     <Link className="navbar-brand" to="/listef">
                        
-                        <h3 className='text text-warning'>  <img src='logopfe.jpg' className="navbar-brand rounded-circle" width={'60px'} /> NEZAHA</h3>
+                        <h3 className='text text-primary'>  <img src='logopfe.jpg' width={'60px'} /> NEZAHA</h3>
                     </Link>
                     <button
                         className="navbar-toggler"
@@ -26,27 +26,27 @@ function Menupfe() {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link text-light" to="/aff">
+                                <Link className="nav-link text-dark" to="/aff">
                                     Accueil
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link  text-light" to="/listef">
+                                <Link className="nav-link  text-dark" to="/listef">
                                     Voyage organisé
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link  text-light" to="/ajouterfilm">
+                                <Link className="nav-link  text-dark" to="/ajouterfilm">
                                     Haj et Omra
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link  text-light" to="/ajouterfilm">
+                                <Link className="nav-link  text-dark" to="/ajouterfilm">
                                     Vol
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link text-light" to="/ajouterfilm">
+                                <Link className="nav-link text-dark" to="/ajouterfilm">
                                     Contact
                                 </Link>
                             </li>
