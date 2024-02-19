@@ -1,6 +1,5 @@
 import React from 'react';
 import './NavBar.css';
-import { Fade } from 'react-reveal';
 export default function Accueil() {
     return (
         <div className='row'>
@@ -8,6 +7,14 @@ export default function Accueil() {
                 <h1 className='ms-3 p-5' style={{ fontFamily : 'Cursive' ,fontSize:'55px'}}>
                     TIME TO<br /><h1 style={{fontSize:'100px' ,fontFamily:'Impact, fantasy'}} className='text-primary' >TRAVELING</h1>
                 </h1><br />
+                <button className=''>
+                    <span class="circle1"></span>
+                    <span class="circle2"></span>
+                    <span class="circle3"></span>
+                    <span class="circle4"></span>
+                    <span class="circle5"></span>
+                    <span class="text"></span>
+                </button>
             </div>
             <div className='col-6 w3-container w3-center w3-animate-top' >
                 <img style={{height:'700px' , width:'800px' , paddingBottom:'115px'}} src="LogodesignVoayge.png" class="rounded float-end" alt="..."></img>
@@ -15,7 +22,6 @@ export default function Accueil() {
             <div className='row'>
             <h1 style={{textAlign:'center'}}>Nos services </h1>
                 <div className='p-5 w3-container w3-center w3-animate-top'>
-                    <Fade>
                     <div id="carouselExampleDark" className="carousel carousel-dark slide text-light">
                         <div className="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -54,7 +60,6 @@ export default function Accueil() {
                             <span className="visually-hidden">Next</span>
                         </button>
                     </div>
-                    </Fade>
                 </div>
             </div>
             <div className='row'>
@@ -72,7 +77,7 @@ export default function Accueil() {
             </div>
             <div className='col-4'>
                 <i style={{fontSize:'90px'}} class="fa-solid fa-ranking-star p-4"></i>
-                <h3>La garantie du meilleur prix</h3>
+                <h3 className='text-xl5'>La garantie du meilleur prix</h3>
                 <p className='p-4 '>Des expertes ayant visites toutes les distinations qui vous conseillent</p> 
             </div>
         </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Footer from "./footer";
+import { Fade } from 'react-reveal';
 import './InfosBVoyage.css'
 //import { useParams } from "react-router-dom";
 export default function Aff(){
@@ -17,11 +18,12 @@ export default function Aff(){
     return <div>
         {uniq.map((u)=>{
             return <div className="row px-5">
-                <div className="col-8">
+                <Fade top>
+                <div className="col-7">
                     <img src={u.imageVille} alt="" srcset="" width={'100%'} />
                 </div>
-                <div className="col-4">
-                    <b style={{fontSize:'33px'}}>A partir de {u.prixVoyage} Dhs Par Personne</b>
+                <div className="col-5">
+                    <b className="" style={{fontSize:'29px'}} >A partir de {u.prixVoyage} Dhs Par Personne</b>
                     <br />
                     <br />
                     <div className="row">
@@ -42,19 +44,56 @@ export default function Aff(){
                     </div>
                     <b style={{textAlign:'center' , fontSize:'30px'}}>Réservez directement au</b><br />
                     <b style={{fontSize:'25px'}}><i class="fa-solid fa-square-phone"></i>+21277-083904</b><br />
-                    <div>
+                    <div><br /> 
                     </div>
-                    <ul className="p-4">
+                    <ul className="">
                         <li>Hôtel - Petit déjeuner - Vol A / R - Transfert Aeroport</li>
                         <li>Hôtel 4 étoiles</li>
                     </ul>
-                    <div className="d-grid">
-                        <button className="btn btn-primary">Voir les tarifs & Dispo</button>
-                    </div>
+                    <div data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+                        <ul class="navbar-nav">
+                            <li><a className="btn btn-primary" href="#section1">VOIR TARIFS & DISPOS</a></li>
+                        </ul>
+
+                    </div><br />
                 </div>
+                <br />
+                <Fade FadeInDown>
+                    <h1 className="bg-warning py-3" style={{borderRadius:'190px'}}>Description sur ce voyage </h1>
+                    <b>Le package inclus :</b>
+                    {u.description_V}
+                </Fade>
+                <Fade FadeInDown>
+                    <h1 id="section1" className="bg-warning py-3" style={{borderRadius:'190px'}}>TARIFS ET DISPONIBILITÉS</h1>
+                    <table className="table table-striped">
+                        <thead className="bg-primary py-5" style={{fontSize:'23px'}}>
+                            <th>DÉPART</th>
+                            <th>FORMULE</th>
+                            <th>PRIX</th>
+                            <th>SÉLECTIONNER</th>
+                        </thead>
+                        <tbody>
+                            {u.RevervationDispo.map((i)=>{
+                                return <tr>
+                                    <td>
+                                        <img src={i.AgenceVyg} className="my-3" alt="" srcset="" width={'40%'} /><br/>
+                                        <b style={{color:'#FFD43B',fontSize:'28px'}}><i class="fa-solid fa-plane-departure"></i></b>{' '}<b>Départ le : {i.Date_Debut_Vyg}</b>
+                                        <br />|<br />
+                                        <b style={{color:'#FFD43B',fontSize:'28px'}}><i class="fa-solid fa-plane-arrival"></i></b>{' '}<b> Retour le : {i.Date_Fin_Vyg}</b>
+                                    </td>
+                                    <td><b>{i.FormuleDescr}</b></td>
+                                    <td><b>{i.prixVyg} Dhs <br/><sub>Par Personne</sub></b></td>
+                                    <td><button style={{fontSize:'15px'}}>Je reserve</button></td>
+                                </tr>
+                            })}
+                        </tbody>
+                    </table>
+                    
+                </Fade>
                 <div className="d-grid p-5" id="buttonTarif">
                     <button className="btn btn-warning" onClick={NavigateToVoyages}>Retour</button>
                 </div>
+                </Fade>
             </div>
         })}
     </div>

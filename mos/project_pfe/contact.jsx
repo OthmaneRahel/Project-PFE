@@ -1,10 +1,8 @@
 import React from "react";
 import Footer from "./footer";
-import { Fade } from "react-reveal";
  function Contact() {
     return (
         <div className="row">
-            <Fade top>
             <div className="col-1"></div>
             <div className="col-5">
             <br/> <br/> <br/>
@@ -42,7 +40,6 @@ import { Fade } from "react-reveal";
                 <br />
             </form>
         </div>
-        </Fade>
         <div className="col-1"></div>
     </div>
 
