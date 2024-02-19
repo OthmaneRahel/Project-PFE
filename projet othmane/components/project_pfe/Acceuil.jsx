@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import {Route, BrowserRouter as Router, Routes, Link } from 'react-router-dom';
+import Footer from "./footer";
+import './NavBar.css';
 function Menupfe() {
     //style={{boxShadow: '7px 7px 5px -5px rgba(0,0,0,0.2)'}}
     return (
-        <Router>
+        <div>
+            <Router>
             <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container">
                     <Link className="navbar-brand" to="/listef">
                         <h3 className='text text-primary'>  <img src='logopfe.jpg' width={'60px'} /> NEZAHA VOYAGE</h3>
                     </Link>
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
@@ -51,14 +46,9 @@ function Menupfe() {
                     </div>
                 </div>
             </nav>
-
-            <Routes>
-                <Route path="/aff"  />
-                <Route path="/listef"  />
-                <Route path="/ajouterfilm"  />
-                <Route path="/modifierfilm/:id"  />
-            </Routes>
         </Router>
+        <Footer/>
+        </div>
     );
 }
 
