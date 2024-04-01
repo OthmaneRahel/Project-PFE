@@ -1,0 +1,2 @@
+Route::get('/listeentrepot',[Application_stage::class,'lister']);
+Route::get('/listeproduit',[Application_stage::class,'listerP']);
