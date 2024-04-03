@@ -44,7 +44,7 @@ class Application_stage extends Controller
     }
     public function ajouterClient(Request $request)
     {
-        $client=Client::create([
+        $client = Client::create([
             'idC'=>$request->idC,
             'nom'=>$request->nom,
             'adresse'=>$request->adresse,
