@@ -21,8 +21,6 @@ return new class extends Migration
             $table->date('date_depart');
             $table->date('date_arrivee');
             $table->string('description');
-            $table->bigInteger('idReserVol')->unsigned();
-            $table->foreign('idReserVol')->references('idReserVol')->on('reservation_vol_dispo');
             $table->timestamps();
         });
     }

@@ -8,16 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class VoyagesDispo extends Model
 {
     protected $table = 'reservation_voyage_dispo';
-    protected $primaryKey = 'idReserVyg';
+    protected $primaryKey = 'idVygDispo';
     public $timestamps = true;
     protected $fillable = [
-        'agenceVyg','date_debut','date_fin','prixV','formule','idC'
+        'agenceVyg','date_debut','date_fin','prixV','formule','idVoyage'
     ];
     public function voyages(){
-        return $this->hasMany(Voyages::class,'idReserVyg','idReserVyg');
+        return $this->belongsTo(Voyages::class,'idVoyage','idVoyage');
     }
     public function commentsVoyages(){
-        return $this->belongsTo(CommentsVyg::class,'idC','idC');    
+        return $this->hasMany(CommentsVyg::class,'idC','idC');    
     }
     use HasFactory;
 }

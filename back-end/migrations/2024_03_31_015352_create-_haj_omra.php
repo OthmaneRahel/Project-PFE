@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('HajOmra', function (Blueprint $table) {
-            $table->id('id');
+            $table->id('idHO');
             $table->string('nom');
             $table->string('image');
             $table->date('date_depart');

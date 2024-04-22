@@ -11,11 +11,11 @@ class Voyages extends Model
     protected $primaryKey = 'idVoyage';
     public $timestamps = true;
     protected $fillable = [
-        'nomVille','image','prix','date_depart','date_arrivee','description','idReserVyg'
+        'nomVille','image','prix','date_depart','date_arrivee','description'
     ];
 
     public function voyagesdispo(){
-        return $this->belongsTo(VoyagesDispo::class,'idReserVyg','idReserVyg');
+        return $this->hasMany(VoyagesDispo::class,'idVoyage','idVoyage');
     }
     use HasFactory;
 }

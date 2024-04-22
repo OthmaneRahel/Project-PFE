@@ -11,10 +11,10 @@ class Vols extends Model
     protected $primaryKey = 'idVol';
     public $timestamps = true;
     protected $fillable = [
-        'nomVille','image','prix','date_depart','date_arrivee','description','idReserVol'
+        'nomVille','image','prix','date_depart','date_arrivee','description'
     ];
     public function voldispo(){
-        return $this->belongsTo(VolsDispo::class,'idReserVol','idReserVol');
+        return $this->hasMany(VolsDispo::class,'idVol','idVol');
     }
     use HasFactory;
 }

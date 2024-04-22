@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id('idC');
             $table->string('nom');
             $table->string('comments');
+            $table->bigInteger('idVygDispo')->unsigned();
+            $table->foreign('idVygDispo')->references('idVygDispo')->on('reservation_voyage_dispo');
             $table->timestamps();
         });
     }

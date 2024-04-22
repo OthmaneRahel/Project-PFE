@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id('idV');
             $table->string('nom');
             $table->string('comments');
+            $table->bigInteger('idReserVol')->unsigned();
+            $table->foreign('idReserVol')->references('idReserVol')->on('reservation_vol_dispo');
             $table->timestamps();
         });
     }

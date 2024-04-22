@@ -21,8 +21,6 @@ return new class extends Migration
             $table->date('date_depart');
             $table->date('date_arrivee');
             $table->string('description');
-            $table->bigInteger('idReserVyg')->unsigned();
-            $table->foreign('idReserVyg')->references('idReserVyg')->on('reservation_voyage_dispo');
             $table->timestamps();
         });
     }

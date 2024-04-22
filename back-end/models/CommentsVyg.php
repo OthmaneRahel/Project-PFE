@@ -11,7 +11,10 @@ class CommentsVyg extends Model
     protected $primaryKey = 'idC';
     public $timestamps = true;
     protected $fillable = [
-        'nom','comments'
+        'nom','comments','idVygDispo'
     ];
+    public function voyageDispo(){
+        return $this->belongsTo(VoyagesDispo::class,'idVygDispo','idVygDispo');    
+    }
     use HasFactory;
 }

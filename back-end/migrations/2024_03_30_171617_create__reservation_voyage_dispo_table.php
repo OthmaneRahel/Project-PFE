@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reservation_voyage_dispo', function (Blueprint $table) {
-            $table->id('idReserVyg');
+            $table->id('idVygDispo');
             $table->string('agenceVyg');
             $table->date('date_debut');
             $table->date('date_fin');
             $table->integer('prixV');
             $table->string('formule');
-            $table->bigInteger('idC')->unsigned();
-            $table->foreign('idC')->references('idC')->on('commentaires_voyages');
+            $table->bigInteger('idVoyage')->unsigned();
+            $table->foreign('idVoyage')->references('idVoyage')->on('voyage');
             $table->timestamps();
         });
     }

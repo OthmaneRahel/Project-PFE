@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reservation_vol_dispo', function (Blueprint $table) {
-            $table->id('idReserVol');
+            $table->id('idVolDispo');
             $table->string('agenceVyg');
             $table->date('date_debut');
             $table->date('date_fin');
             $table->integer('prixV');
             $table->string('formule');
-            $table->bigInteger('idV')->unsigned();
-            $table->foreign('idV')->references('idV')->on('commentaires_vol');
+            $table->bigInteger('idVol')->unsigned();
+            $table->foreign('idVol')->references('idVol')->on('vol');
             $table->timestamps();
         });
     }
